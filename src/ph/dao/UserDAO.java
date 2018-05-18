@@ -91,6 +91,12 @@ public class UserDAO
         return user;
     }
 
+
+    /**
+     * 根据参数cname客户姓名查找t_user表中role为customer类型的记录，如果找到记录就返回对应的封装对象集合List<User>，没有就返回size=0的集合List<User>
+     * @param cname
+     * @return
+     */
     public List<User> searchCustomer(String cname) throws Exception
     {
         List<User> users = new ArrayList<User>();
@@ -219,5 +225,13 @@ public class UserDAO
                 con.close();
             }
         }
+    }
+
+
+    public List<User> getAllCustomer() throws Exception
+    {
+//        List<User> users = searchCustomer("");
+//        return users;
+        return searchCustomer("");
     }
 }
