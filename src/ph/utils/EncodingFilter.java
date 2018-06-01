@@ -23,7 +23,7 @@ public class EncodingFilter implements Filter
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException
     {
         request.setCharacterEncoding("utf-8");
-        System.out.println(((HttpServletRequest) request).getRequestURI());
+        System.out.println("中文编码过滤器URI：" + ((HttpServletRequest) request).getRequestURI());
         chain.doFilter(request, response);
     }
 
